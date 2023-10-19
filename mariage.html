@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Budget mariage</title>
+    <!-- Styles Material Design Lite (MDL) -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-deep_purple.min.css">
+    <!-- Scripts Material Design Lite (MDL) -->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5a3b6; /* Rose clair */
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4081; /* Rose vif */
+        }
+
+        .mdl-button--colored {
+            background-color: #ff4081 !important; /* Rose vif */
+            color: #fff !important;
+        }
+
+        .section-title {
+            text-align: left;
+        }
+
+        .card {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Budget mariage</h1>
+
+        <form id="budgetForm">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Salle</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="salleDescription" class="mdl-textfield__input" name="salleDescription">
+                    <label class="mdl-textfield__label" for="salleDescription">Description de la Salle</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="salleCost" class="mdl-textfield__input" name="salleCost">
+                    <label class="mdl-textfield__label" for="salleCost">Coût de la Salle</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Invités</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="numGuests" class="mdl-textfield__input" name="numGuests">
+                    <label class="mdl-textfield__label" for="salleDescription">Invités(adultes)</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="numChildren" class="mdl-textfield__input" name="salleCost">
+                    <label class="mdl-textfield__label" for="salleCost">Enfants</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Traiteur</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="traiteurDescription" class="mdl-textfield__input" name="traiteurDescription">
+                    <label class="mdl-textfield__label" for="traiteurDescription">Description du Traiteur</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="traiteurCost" class="mdl-textfield__input" name="traiteurCost">
+                    <label class="mdl-textfield__label" for="traiteurCost">Traiteur coût par personne</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Cadeaux pour invités</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="cadeauxDescription" class="mdl-textfield__input" name="cadeauxDescription">
+                    <label class="mdl-textfield__label" for="cadeauxDescription">Description des Cadeaux pour Invités</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="cadeauxCost" class="mdl-textfield__input" name="cadeauxCost">
+                    <label class="mdl-textfield__label" for="cadeauxCost">Coût des cadeaux par personne</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Cadeaux pour Enfants</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="cadeauxEnfantsDescription" class="mdl-textfield__input" name="cadeauxEnfantsDescription">
+                    <label class="mdl-textfield__label" for="cadeauxEnfantsDescription">Description des Cadeaux pour Enfants</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="cadeauxEnfantsCost" class="mdl-textfield__input" name="cadeauxEnfantsCost">
+                    <label class="mdl-textfield__label" for="cadeauxEnfantsCost">Coût cadeau par enfant</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Pièce montée</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="pieceMonteeDescription" class="mdl-textfield__input" name="pieceMonteeDescription">
+                    <label class="mdl-textfield__label" for="pieceMonteeDescription">Description de la pièce Montée</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="pieceMonteeCost" class="mdl-textfield__input" name="pieceMonteeCost">
+                    <label class="mdl-textfield__label" for="pieceMonteeCost">Coût de la pièce montée</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">DJ</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="djDescription" class="mdl-textfield__input" name="djDescription">
+                    <label class="mdl-textfield__label" for="djDescription">Description du DJ</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="djCost" class="mdl-textfield__input" name="djCost">
+                    <label class="mdl-textfield__label" for="djCost">Coût du DJ</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Photographe</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="photographeDescription" class="mdl-textfield__input" name="photographeDescription">
+                    <label class="mdl-textfield__label" for="photographeDescription">Description du photographe</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="photographeCost" class="mdl-textfield__input" name="photographeCost">
+                    <label class="mdl-textfield__label" for="photographeCost">Coût du photographe</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Location de voiture</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="locationVoitureDescription" class="mdl-textfield__input" name="locationVoitureDescription">
+                    <label class="mdl-textfield__label" for="locationVoitureDescription">Description de la location de voiture</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="locationVoitureCost" class="mdl-textfield__input" name="locationVoitureCost">
+                    <label class="mdl-textfield__label" for="locationVoitureCost">Coût de la location de voiture</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Déco - Trone</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="decoDescription" class="mdl-textfield__input" name="decoDescription">
+                    <label class="mdl-textfield__label" for="decoDescription">Description de la décoration</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="decoCost" class="mdl-textfield__input" name="decoCost">
+                    <label class="mdl-textfield__label" for="decoCost">Coût de la décoration</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Bouquet de fleurs</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="bouquetDescription" class="mdl-textfield__input" name="bouquetDescription">
+                    <label class="mdl-textfield__label" for="bouquetDescription">Description du Bouquet de fleurs</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="bouquetCost" class="mdl-textfield__input" name="bouquetCost">
+                    <label class="mdl-textfield__label" for="bouquetCost">Coût du bouquet de fleurs</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Confettis et autres</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="confettisDescription" class="mdl-textfield__input" name="confettisDescription">
+                    <label class="mdl-textfield__label" for="confettisDescription">Description des confettis et autres</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="confettisCost" class="mdl-textfield__input" name="confettisCost">
+                    <label class="mdl-textfield__label" for="confettisCost">Coût des confettis et autres</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="section-title">Livre d'or</h2>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" id="livreOrDescription" class="mdl-textfield__input" name="livreOrDescription">
+                    <label class="mdl-textfield__label" for="livreOrDescription">Description du livre d'or</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="number" id="livreOrCost" class="mdl-textfield__input" name="livreOrCost">
+                    <label class="mdl-textfield__label" for="livreOrCost">Coût du livre d'or</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="section-title">Budget</h2>
+                <p id="totalBudget" class="lead">Le budget total : €0</p>
+                <button type="button" id="calculateButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Calculer le budget</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!--    <script>
+    document.getElementById('calculateButton').addEventListener('click', function() {
+        // Obtenir les valeurs des champs
+        var salleCost = parseFloat(document.getElementById('salleCost').value);
+        var decorationCost = parseFloat(document.getElementById('decorationCost').value);
+        var throneCost = parseFloat(document.getElementById('throneCost').value);
+        var numGuests = parseInt(document.getElementById('numGuests').value);
+        var numChildren = parseInt(document.getElementById('numChildren').value);
+        var costPerGuest = parseFloat(document.getElementById('costPerGuest').value);
+        var gift1Cost = parseFloat(document.getElementById('gift1Cost').value);
+        var gift2Cost = parseFloat(document.getElementById('gift2Cost').value);
+        var gift3Cost = parseFloat(document.getElementById('gift3Cost').value);
+        var childGift1Cost = parseFloat(document.getElementById('childGift1Cost').value);
+        var childGift2Cost = parseFloat(document.getElementById('childGift2Cost').value);
+        var childGift3Cost = parseFloat(document.getElementById('childGift3Cost').value);
+        var cakeCost = parseFloat(document.getElementById('cakeCost').value);
+        var djCost = parseFloat(document.getElementById('djCost').value);
+        var photographerCost = parseFloat(document.getElementById('photographerCost').value);
+        var carRentalCost = parseFloat(document.getElementById('carRentalCost').value);
+        var flowerCost = parseFloat(document.getElementById('flowerCost').value);
+        var confettiCost = parseFloat(document.getElementById('confettiCost').value);
+        var guestbookCost = parseFloat(document.getElementById('guestbookCost').value);
+
+        // Calcul du budget total
+        var totalBudget = salleCost + decorationCost + throneCost + (numGuests * costPerGuest) +
+            (numGuests * (gift1Cost + gift2Cost + gift3Cost)) + (numChildren * (childGift1Cost + childGift2Cost + childGift3Cost)) +
+            cakeCost + djCost + photographerCost + carRentalCost +
+            flowerCost + confettiCost + guestbookCost;
+
+        // Affichage du résultat
+        document.getElementById('totalBudget').textContent = "Le budget total est de : $" + totalBudget;
+    });
+</script> -->
+
+<script>
+    document.getElementById('calculateButton').addEventListener('click', function () {
+        // Obtenir les valeurs des champs
+        var salleCost = parseFloat(document.getElementById('salleCost').value);
+        var traiteurCost = parseFloat(document.getElementById('traiteurCost').value);
+        var cadeauxCost = parseFloat(document.getElementById('cadeauxCost').value);
+        var cadeauxEnfantsCost = parseFloat(document.getElementById('cadeauxEnfantsCost').value);
+        // var throneCost = parseFloat(document.getElementById('throneCost').value);
+        var numGuests = parseInt(document.getElementById('numGuests').value);
+        var numChildren = parseInt(document.getElementById('numChildren').value);
+        var pieceMonteeCost = parseFloat(document.getElementById('pieceMonteeCost').value);
+        var djCost = parseFloat(document.getElementById('djCost').value);
+        var photographeCost = parseFloat(document.getElementById('photographeCost').value);
+        var locationVoitureCost = parseFloat(document.getElementById('locationVoitureCost').value);
+        var decoCost = parseFloat(document.getElementById('decoCost').value);
+        var bouquetCost = parseFloat(document.getElementById('bouquetCost').value);
+        var confettisCost = parseFloat(document.getElementById('confettisCost').value);
+        var livreOrCost = parseFloat(document.getElementById('livreOrCost').value);
+
+        // Calcul du budget total
+        var totalBudget = salleCost + decoCost + (numGuests * traiteurCost) +
+            (numGuests * cadeauxCost) + (numChildren * cadeauxEnfantsCost) +
+            pieceMonteeCost + djCost + photographeCost + locationVoitureCost +
+            bouquetCost + confettisCost + livreOrCost + (numChildren * 20);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+        console.log(numGuests);
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
+        // Affichage du résultat
+        if (isNaN(totalBudget)) {
+            document.getElementById('totalBudget').textContent = "Il faut renseinger tous les champs concerant le coût";  
+        }
+
+        else {
+            document.getElementById('totalBudget').textContent = "Le budget total est de : €" + totalBudget ;
+        }
+
+    });
+</script>
+</body>
+
+</html>
